@@ -8,4 +8,5 @@ public @interface RegexPattern {
 
     public String reg() default "";
     public String msg() default "";
+
 }
