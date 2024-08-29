@@ -4,11 +4,11 @@ package com.products.cylontea.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-public class ResourceNotFoundException extends RuntimeException {
+@ResponseStatus(value = HttpStatus.CONFLICT)
+public class ResourceAllReadyExistException extends RuntimeException {
 
 
-    public ResourceNotFoundException(String message) {
+    public ResourceAllReadyExistException(String message) {
         super(message);
     }
 
