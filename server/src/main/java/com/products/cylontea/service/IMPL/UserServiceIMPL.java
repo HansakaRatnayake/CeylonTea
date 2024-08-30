@@ -1,10 +1,9 @@
 package com.products.cylontea.service.IMPL;
 
 import com.products.cylontea.dto.UserDTO;
-import com.products.cylontea.exception.ResourceAllReadyExistException;
+import com.products.cylontea.exception.ResourceAlreadyExistException;
 import com.products.cylontea.exception.ResourceNotFoundException;
 import com.products.cylontea.model.User;
-import com.products.cylontea.repository.EmployeeRepository;
 import com.products.cylontea.repository.UserRepository;
 import com.products.cylontea.service.UserService;
 import com.products.cylontea.util.mapper.ObjectMapper;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -99,7 +97,7 @@ public class UserServiceIMPL implements UserService {
     @Override
     public String create(UserDTO userDTO) {
 
-        if (userRepository.existsByUsername(userDTO.getUsername())) throw new ResourceAllReadyExistException("Username already existes");
+        if (userRepository.existsByUsername(userDTO.getUsername())) throw new ResourceAlreadyExistException("Username already existes");
 
         User user = objectMapper.userDtoToUser(userDTO);
 
@@ -114,7 +112,7 @@ public class UserServiceIMPL implements UserService {
         User selecteduser = userRepository.findById(userDTO.getId()).orElseThrow(() -> new ResourceNotFoundException("User Not Found"));
 
         if (userRepository.existsByUsername(userDTO.getUsername()) && !userDTO.getUsername().equals(selecteduser.getUsername()) )
-            throw new ResourceAllReadyExistException("Username already existes");
+            throw new ResourceAlreadyExistException("Username already existes");
 
 
         User user = objectMapper.userDtoToUser(userDTO);

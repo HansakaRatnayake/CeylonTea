@@ -1,8 +1,10 @@
 package com.products.cylontea.util.mapper;
 
 
+import com.products.cylontea.dto.AuthorityDTO;
 import com.products.cylontea.dto.EmployeeDTO;
 import com.products.cylontea.dto.UserDTO;
+import com.products.cylontea.model.Authority;
 import com.products.cylontea.model.Employee;
 import com.products.cylontea.model.User;
 import org.mapstruct.Mapper;
@@ -21,4 +23,8 @@ public interface ObjectMapper {
     List<UserDTO> userListToDtoList(List<User> userList);
 
     User userDtoToUser(UserDTO userDTO);
+
+    List<AuthorityDTO> authorityListToDtoList(List<Authority> authorities);
+
+    Authority authorityDtoToAuthority(AuthorityDTO authorityDTO);
 }
