@@ -7,10 +7,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 @RequiredArgsConstructor
-@RestController("/api/v1/designations")
+@RequestMapping("/api/v1/designations")
 public class DesignationController {
 
     private final DesignationService designationService;
@@ -18,7 +20,7 @@ public class DesignationController {
     @GetMapping
     public ResponseEntity<StandardResponse> getAll() {
 
-        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Designations recieved", designationService.getAll()),
+        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Designations received", designationService.getAll()),
                 HttpStatus.OK);
 
     }
