@@ -21,9 +21,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<StandardResponse> getAll(@RequestParam Map<String, String> params) {
-
       List<UserDTO> userDTOList= userService.getAll(params);
-
       return new ResponseEntity<StandardResponse>(
               new StandardResponse(200,"Users Successfully Recived",userDTOList),
               HttpStatus.OK
