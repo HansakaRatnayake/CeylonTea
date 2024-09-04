@@ -3,6 +3,7 @@ package com.products.cylontea.util.mapper;
 
 import com.products.cylontea.dto.*;
 import com.products.cylontea.model.*;
+import com.products.cylontea.model.Module;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -31,4 +32,8 @@ public interface ObjectMapper {
     List<DesignationDTO> designationListToDtoList(List<Designation> designationList);
 
     List<GenderDTO> genderListToDtoList(List<Gender> genderList);
+
+    List<ModuleDTO> moduleListToDtoList(List<Module> modules);
+
+    List<OperationDTO> operationListToDtoList(List<Operation> operations);
 }

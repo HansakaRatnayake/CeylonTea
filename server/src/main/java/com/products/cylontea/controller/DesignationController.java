@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/designations")
+@RestController
 public class DesignationController {
 
     private final DesignationService designationService;
@@ -20,7 +20,7 @@ public class DesignationController {
     @GetMapping
     public ResponseEntity<StandardResponse> getAll() {
 
-        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Designations received", designationService.getAll()),
+        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Designations recieved", designationService.getAll()),
                 HttpStatus.OK);
 
     }

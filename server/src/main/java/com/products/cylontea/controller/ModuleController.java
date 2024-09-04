@@ -1,8 +1,7 @@
 package com.products.cylontea.controller;
 
 import com.products.cylontea.dto.StandardResponse;
-import com.products.cylontea.service.EmployeeStatusService;
-import com.products.cylontea.service.EmployeeTypeService;
+import com.products.cylontea.service.ModuleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,16 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/employeetypes")
+@RequestMapping("/api/v1/modules")
 @RestController
-public class EmployeeTypeController {
+public class ModuleController {
 
-    private final EmployeeTypeService employeeTypeService;
+    private final ModuleService moduleService;
 
     @GetMapping
     public ResponseEntity<StandardResponse> getAll() {
-
-        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Employee types recieved", employeeTypeService.getAll()),
+        return new ResponseEntity<StandardResponse>(new StandardResponse(200, "Designations recieved", moduleService.getAll()),
                 HttpStatus.OK);
 
     }
