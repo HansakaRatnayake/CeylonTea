@@ -36,4 +36,10 @@ public interface ObjectMapper {
     List<ModuleDTO> moduleListToDtoList(List<Module> modules);
 
     List<OperationDTO> operationListToDtoList(List<Operation> operations);
+
+    List<RoleDTO> roleListToDtoList(List<Role> roles);
+
+    List<UserStatusDTO> userStatusListToDtoList(List<Userstatus> userStatusList);
+
+    List<UserTypeDTO> userTypeListToDtoList(List<Usertype> userTypes);
 }
